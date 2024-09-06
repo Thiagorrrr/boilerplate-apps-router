@@ -12,14 +12,17 @@ module.exports = {
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
   modulePaths: ['<rootDir>/src/'],
   transform: {
-    "^.+\\.(js|jsx|ts|tsx)$": ['babel-jest', {
-      sourceType: 'unambiguous',
-      targets: { node: process.versions.node }, // Define o alvo como a versão do Node.js atual
-      presets: [
-        '@babel/preset-env',
-        ['@babel/preset-react', { development: true, runtime: 'automatic' }]  // Suporte para JSX no modo de desenvolvimento
-      ]
-    }]
+    '^.+\\.(js|jsx|ts|tsx)$': [
+      'babel-jest',
+      {
+        sourceType: 'unambiguous',
+        targets: { node: process.versions.node }, // Define o alvo como a versão do Node.js atual
+        presets: [
+          '@babel/preset-env',
+          ['@babel/preset-react', { development: true, runtime: 'automatic' }] // Suporte para JSX no modo de desenvolvimento
+        ]
+      }
+    ]
   },
   // https://github.com/styled-components/styled-components/issues/4081
   // v6 of styled-components doesn't inject styles in test environment
